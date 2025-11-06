@@ -1,32 +1,32 @@
 import React from 'react';
-import { Star, Image as ImageIcon, Video, Type, Hash, Calendar, BarChart } from 'lucide-react';
+import { Rocket, ShieldCheck, Sparkles, Clock } from 'lucide-react';
 
 const benefits = [
-  { icon: Star, text: 'Ide konten yang relate dengan target market Anda' },
-  { icon: ImageIcon, text: 'Desain visual sesuai brand identity Anda' },
-  { icon: Video, text: 'Editing video sesuai style' },
-  { icon: Type, text: 'Caption yang engaging & mendorong interaksi' },
-  { icon: Hash, text: 'Hashtag yang relevan & efektif' },
-  { icon: Calendar, text: 'Konten kalender dan posting terjadwal' },
-  { icon: BarChart, text: 'Laporan bulanan performa konten' },
+  { icon: Rocket, title: 'Pertumbuhan Terukur', desc: 'Rencana yang fokus ke metrik yang penting: reach, engagement, dan leads.' },
+  { icon: ShieldCheck, title: 'Brand Konsisten', desc: 'Tone visual dan voice dijaga agar kredibel dan mudah dikenali.' },
+  { icon: Sparkles, title: 'Konten Relevan', desc: 'Ikuti tren tanpa kehilangan jati diri brand Anda.' },
+  { icon: Clock, title: 'Hemat Waktu', desc: 'Anda fokus ke operasional bisnis, produksi konten kami urus.' },
 ];
 
 export default function Benefits() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-14 md:py-20">
-      <div className="mx-auto max-w-2xl text-center">
-        <h3 className="text-2xl md:text-3xl font-semibold text-gray-900">Apa yang Akan Anda Dapatkan?</h3>
-        <p className="mt-3 text-gray-600">Ringkas, jelas, dan langsung manfaatnya.</p>
-      </div>
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {benefits.map(({ icon: Icon, text }) => (
-          <div key={text} className="flex items-start gap-4 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
-              <Icon className="h-5 w-5" />
+    <section className="w-full bg-white py-16">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-sm font-medium text-emerald-600">Benefits</p>
+          <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">Kenapa memilih kami</h2>
+        </div>
+        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-4">
+          {benefits.map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                <Icon className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-slate-900">{title}</h3>
+              <p className="mt-1 text-sm text-slate-600">{desc}</p>
             </div>
-            <p className="text-gray-800">{text}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
